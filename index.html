@@ -86,6 +86,68 @@ div > div[style*="display: flex"] {
   margin-left: 9px;
 }
 
+/* DESKTOP IMAGE GRID */
+
+.puzzle-checkbox-grid {
+  display: none;
+}
+
+/* MOBILE / SMALL TABLETS */
+@media (max-width: 900px) {
+
+  .puzzle-image-grid {
+    display: none;
+  }
+
+  .puzzle-checkbox-grid {
+    display: block;
+  }
+
+}
+
+.puzzle-image-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    180px
+    repeat(4, 100px);
+
+  gap: 10px;
+
+  align-items: center;
+
+  justify-content: start;
+}
+
+.puzzle-image-grid img {
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+}
+
+.puzzle-image-grid label img {
+  cursor: pointer;
+}
+
+.puzzle-image-grid label.inactive-puzzle img {
+  cursor: default;
+}
+
+.puzzle-header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.puzzle-name {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.inactive-puzzle {
+  cursor: default;
+}
+
 </style>
 </head>
 
@@ -114,6 +176,90 @@ div > div[style*="display: flex"] {
 <p style="text-align:justify; margin-top: 0px;">Any number of puzzle types you choose will be distributed as evenly as possible among the 36-sheet puzzle pack.&nbsp;&nbsp;Please note that some puzzles are not available in every difficulty.&nbsp;&nbsp;Click on any of the puzzle names for a printable free sample!</p>
 
 <form action="08a.html" method="GET">
+
+<div class="puzzle-image-grid">
+
+  <div></div>
+  <div class="puzzle-header">Easy</div>
+  <div class="puzzle-header">Medium</div>
+  <div class="puzzle-header">Hard</div>
+  <div class="puzzle-header">Expert</div>
+
+ <!-- BOGLE ROW -->
+
+  <div class="puzzle-name">
+    <a href="samples/bogle.pdf" target="_blank">
+      Bōgle
+    </a>
+  </div>
+
+  <div>
+    <input type="checkbox" id="bogle_easy" name="bogle_easy" hidden disabled>
+    <label for="bogle_easy" class="inactive-puzzle">
+      <img src="thumbnails/bogle1.png" alt="Easy Bogle unavailable" title="Easy Bogle unavailable">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="bogle_medium" hidden>
+    <label for="bogle_medium">
+      <img src="thumbnails/bogle2.png" alt="Medium Bogle" title="Medium Bogle">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="bogle_hard" name="bogle_hard" hidden disabled>
+    <label for="bogle_easy" class="inactive-puzzle">
+      <img src="thumbnails/bogle3.png" alt="Hard Bogle unavailable" title="Hard Bogle unavailable">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="bogle_expert" name="bogle_expert" hidden disabled>
+    <label for="bogle_easy" class="inactive-puzzle">
+      <img src="thumbnails/bogle4.png" alt="Expert Bogle unavailable" title="Expert Bogle unavailable">
+    </label>
+  </div>
+
+ <!-- SUDOKU ROW -->
+
+  <div class="puzzle-name">
+    <a href="samples/sudoku.pdf" target="_blank">
+      Sudoku
+    </a>
+  </div>
+
+  <div>
+    <input type="checkbox" id="sudoku_easy" hidden>
+    <label for="sudoku_easy">
+      <img src="thumbnails/sudoku1.png" alt="Easy Sudoku" title="Easy Sudoku">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="sudoku_medium" hidden>
+    <label for="sudoku_medium">
+      <img src="thumbnails/sudoku2.png" alt="Medium Sudoku" title="Medium Sudoku">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="sudoku_hard" hidden>
+    <label for="sudoku_hard">
+      <img src="thumbnails/sudoku3.png" alt="Hard Sudoku" title="Hard Sudoku">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="sudoku_expert" hidden>
+    <label for="sudoku_expert">
+      <img src="thumbnails/sudoku4.png" alt="Expert Sudoku" title="Expert Sudoku">
+    </label>
+  </div>
+
+</div>
+
+<div class="puzzle-checkbox-grid">
 
 <div style="width: 100%; overflow-x: auto;">
   <div style="display: inline-block;">
@@ -254,6 +400,7 @@ div > div[style*="display: flex"] {
 
 <div id="puzzle-status" class="required-text" style="margin-top: 10px;">
   ✖ Please select up to 36 puzzle types.
+</div>
 </div>
 
 <!-- ========================== STEP 2: BILLING INFO ========================== -->
