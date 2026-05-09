@@ -227,7 +227,7 @@ div > div[style*="display: flex"] {
   </div>
 
   <div>
-    <input type="checkbox" id="bogle_medium" hidden>
+    <input type="checkbox" id="bogle_medium" name="bogle_medium" hidden onchange="checkPuzzleSelection()">
     <label for="bogle_medium">
       <img src="thumbnails/bogle2.png" alt="Medium Bōgle" title="Medium Bōgle">
     </label>
@@ -247,6 +247,258 @@ div > div[style*="display: flex"] {
     </label>
   </div>
 
+ <!-- CHESS PROBLEMS ROW -->
+
+  <div class="puzzle-name">
+    <a href="samples/chessproblems.pdf" target="_blank">
+      Chess Problems
+    </a>
+  </div>
+
+  <div>
+    <input type="checkbox" id="chess_easy" name="chess_easy" hidden onchange="checkPuzzleSelection()">
+    <label for="chess_easy">
+      <img src="thumbnails/chess1.png" alt="Easy Chess Problems" title="Easy Chess Problems">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="chess_medium" name="chess_medium" hidden onchange="checkPuzzleSelection()">
+    <label for="chess_medium">
+      <img src="thumbnails/chess2.png" alt="Medium Chess Problems" title="Medium Chess Problems">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="chess_hard" name="chess_hard" hidden onchange="checkPuzzleSelection()">
+    <label for="chess_hard">
+      <img src="thumbnails/chess3.png" alt="Hard Chess Problems" title="Hard Chess Problems">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="chess_expert" name="chess_expert" hidden disabled>
+    <label for="chess_expert" class="inactive-puzzle">
+      <img src="thumbnails/chess4.png" alt="Simple Endgames unavailable" title="Simple Endgames unavailable">
+    </label>
+  </div>
+
+ <!-- CRYPTOQUOTES ROW -->
+
+  <div class="puzzle-name">
+    <a href="samples/cryptoquotes.pdf" target="_blank">
+      CryptoQuotes
+    </a>
+  </div>
+
+  <div>
+    <input type="checkbox" id="cryptoQuotes_easy" name="cryptoQuotes_easy" hidden onchange="checkPuzzleSelection()">
+    <label for="cryptoQuotes_easy">
+      <img src="thumbnails/cryptoquotes1.png" alt="Easy CryptoQuotes" title="Easy CryptoQuotes">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="cryptoQuotes_medium" name="cryptoQuotes_medium" hidden onchange="checkPuzzleSelection()">
+    <label for="cryptoQuotes_medium">
+      <img src="thumbnails/cryptoquotes2.png" alt="Medium CryptoQuotes" title="Medium CryptoQuotes">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="cryptoQuotes_hard" name="cryptoQuotes_hard" hidden onchange="checkPuzzleSelection()">
+    <label for="cryptoQuotes_hard">
+      <img src="thumbnails/cryptoquotes3.png" alt="Hard CryptoQuotes" title="Hard CryptoQuotes">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="cryptoQuotes_expert" name="cryptoQuotes_expert" hidden onchange="checkPuzzleSelection()">
+    <label for="cryptoQuotes_expert">
+      <img src="thumbnails/cryptoquotes4.png" alt="Expert CryptoQuotes" title="Expert CryptoQuotes">
+    </label>
+  </div>
+
+ <!-- DIAGONAL SAMURAI ROW -->
+
+  <div class="puzzle-name">
+    <a href="samples/diagonalsamurai.pdf" target="_blank">
+      Diagonal Samurai
+    </a>
+  </div>
+
+  <div>
+    <input type="checkbox" id="diagonalsamurai_easy" name="diagonalsamurai_easy" hidden onchange="checkPuzzleSelection()">
+    <label for="diagonalsamurai_easy">
+      <img src="thumbnails/diagonalsamurai1.png" alt="Easy Diagonal Samurai" title="Easy Diagonal Samurai">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="diagonalsamurai_medium" name="diagonalsamurai_medium" hidden onchange="checkPuzzleSelection()">
+    <label for="diagonalsamurai_medium">
+      <img src="thumbnails/diagonalsamurai2.png" alt="Medium Diagonal Samurai" title="Medium Diagonal Samurai">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="diagonalsamurai_hard" name="diagonalsamurai_hard" hidden onchange="checkPuzzleSelection()">
+    <label for="diagonalsamurai_hard">
+      <img src="thumbnails/diagonalsamurai3.png" alt="Hard Diagonal Samurai" title="Hard Diagonal Samurai">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="diagonalsamurai_expert" name="diagonalsamurai_expert" hidden onchange="checkPuzzleSelection()">
+    <label for="diagonalsamurai_expert">
+      <img src="thumbnails/diagonalsamurai4.png" alt="Expert Diagonal Samurai" title="Expert Diagonal Samurai">
+    </label>
+  </div>
+
+ <!-- DIAGONAL SUDOKU ROW -->
+
+  <div class="puzzle-name">
+    <a href="samples/diagonalsudoku.pdf" target="_blank">
+      Diagonal Sudoku
+    </a>
+  </div>
+
+  <div>
+    <input type="checkbox" id="diagonalsudoku_easy" name="diagonalsudoku_easy" hidden onchange="checkPuzzleSelection()">
+    <label for="diagonalsudoku_easy">
+      <img src="thumbnails/diagonalsudoku1.png" alt="Easy Diagonal Sudoku" title="Easy Diagonal Sudoku">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="diagonalsudoku_medium" name="diagonalsudoku_medium" hidden onchange="checkPuzzleSelection()">
+    <label for="diagonalsudoku_medium">
+      <img src="thumbnails/diagonalsudoku2.png" alt="Medium Diagonal Sudoku" title="Medium Diagonal Sudoku">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="diagonalsudoku_hard" name="diagonalsudoku_hard" hidden onchange="checkPuzzleSelection()">
+    <label for="diagonalsudoku_hard">
+      <img src="thumbnails/diagonalsudoku3.png" alt="Hard Diagonal Sudoku" title="Hard Diagonal Sudoku">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="diagonalsudoku_expert" name="diagonalsudoku_expert" hidden onchange="checkPuzzleSelection()">
+    <label for="diagonalsudoku_expert">
+      <img src="thumbnails/diagonalsudoku4.png" alt="Expert Diagonal Sudoku" title="Expert Diagonal Sudoku">
+    </label>
+  </div>
+
+ <!-- MINESWEEPER ROW -->
+
+  <div class="puzzle-name">
+    <a href="samples/minesweeper.pdf" target="_blank">
+      Minesweeper
+    </a>
+  </div>
+
+  <div>
+    <input type="checkbox" id="minesweeper_easy" name="minesweeper_easy" hidden onchange="checkPuzzleSelection()">
+    <label for="minesweeper_easy">
+      <img src="thumbnails/minesweeper1.png" alt="Easy Minesweeper" title="Easy Minesweeper">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="minesweeper_medium" name="minesweeper_medium" hidden onchange="checkPuzzleSelection()">
+    <label for="minesweeper_medium">
+      <img src="thumbnails/minesweeper2.png" alt="Medium Minesweeper" title="Medium Minesweeper">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="minesweeper_hard" name="minesweeper_hard" hidden onchange="checkPuzzleSelection()">
+    <label for="minesweeper_hard">
+      <img src="thumbnails/minesweeper3.png" alt="Hard Minesweeper" title="Hard Minesweeper">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="minesweeper_expert" name="minesweeper_expert" hidden onchange="checkPuzzleSelection()">
+    <label for="minesweeper_expert">
+      <img src="thumbnails/minesweeper4.png" alt="Expert Minesweeper" title="Expert Minesweeper">
+    </label>
+  </div>
+
+ <!-- PICROSS ROW -->
+
+  <div class="puzzle-name">
+    <a href="samples/picross.pdf" target="_blank">
+      Picross
+    </a>
+  </div>
+
+  <div>
+    <input type="checkbox" id="picross_easy" name="picross_easy" hidden disabled>
+    <label for="picross_easy" class="inactive-puzzle">
+      <img src="thumbnails/picross1.png" alt="Easy Picross unavailable" title="Easy Picross unavailable">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="picross_medium" name="picross_medium" hidden disabled>
+    <label for="picross_medium" class="inactive-puzzle">
+      <img src="thumbnails/picross2.png" alt="Medium Picross unavailable" title="Medium Picross unavailable">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="picross_hard" name="picross_hard" hidden onchange="checkPuzzleSelection()">
+    <label for="picross_hard">
+      <img src="thumbnails/picross3.png" alt="Hard Picross" title="Hard Picross">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="picross_expert" name="picross_expert" hidden disabled>
+    <label for="picross_expert" class="inactive-puzzle">
+      <img src="thumbnails/picross4.png" alt="Expert Picross unavailable" title="Expert Picross unavailable">
+    </label>
+  </div>
+
+ <!-- SAMURAI ROW -->
+
+  <div class="puzzle-name">
+    <a href="samples/samurai.pdf" target="_blank">
+      Samurai
+    </a>
+  </div>
+
+  <div>
+    <input type="checkbox" id="samurai_easy" name="samurai_easy" hidden onchange="checkPuzzleSelection()">
+    <label for="samurai_easy">
+      <img src="thumbnails/samurai1.png" alt="Easy Samurai" title="Easy Samurai">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="samurai_medium" name="samurai_medium" hidden onchange="checkPuzzleSelection()">
+    <label for="samurai_medium">
+      <img src="thumbnails/samurai2.png" alt="Medium Samurai" title="Medium Samurai">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="samurai_hard" name="samurai_hard" hidden onchange="checkPuzzleSelection()">
+    <label for="samurai_hard">
+      <img src="thumbnails/samurai3.png" alt="Hard Samurai" title="Hard Samurai">
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="samurai_expert" name="samurai_expert" hidden onchange="checkPuzzleSelection()">
+    <label for="samurai_expert">
+      <img src="thumbnails/samurai4.png" alt="Expert Samurai" title="Expert Samurai">
+    </label>
+  </div>
+
  <!-- SUDOKU ROW -->
 
   <div class="puzzle-name">
@@ -256,28 +508,28 @@ div > div[style*="display: flex"] {
   </div>
 
   <div>
-    <input type="checkbox" id="sudoku_easy" hidden>
+    <input type="checkbox" id="sudoku_easy" name="sudoku_easy" hidden onchange="checkPuzzleSelection()">
     <label for="sudoku_easy">
       <img src="thumbnails/sudoku1.png" alt="Easy Sudoku" title="Easy Sudoku">
     </label>
   </div>
 
   <div>
-    <input type="checkbox" id="sudoku_medium" hidden>
+    <input type="checkbox" id="sudoku_medium" name="sudoku_medium" hidden onchange="checkPuzzleSelection()">
     <label for="sudoku_medium">
       <img src="thumbnails/sudoku2.png" alt="Medium Sudoku" title="Medium Sudoku">
     </label>
   </div>
 
   <div>
-    <input type="checkbox" id="sudoku_hard" hidden>
+    <input type="checkbox" id="sudoku_hard" name="sudoku_hard" hidden onchange="checkPuzzleSelection()">
     <label for="sudoku_hard">
       <img src="thumbnails/sudoku3.png" alt="Hard Sudoku" title="Hard Sudoku">
     </label>
   </div>
 
   <div>
-    <input type="checkbox" id="sudoku_expert" hidden>
+    <input type="checkbox" id="sudoku_expert" name="sudoku_expert" hidden onchange="checkPuzzleSelection()">
     <label for="sudoku_expert">
       <img src="thumbnails/sudoku4.png" alt="Expert Sudoku" title="Expert Sudoku">
     </label>
@@ -423,10 +675,10 @@ div > div[style*="display: flex"] {
   <!-- Add the rest the same way -->
   </div>
 </div>
+</div>
 
 <div id="puzzle-status" class="required-text" style="margin-top: 10px;">
   ✖ Please select up to 36 puzzle types.
-</div>
 </div>
 
 <!-- ========================== STEP 2: BILLING INFO ========================== -->
