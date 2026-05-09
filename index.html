@@ -86,28 +86,8 @@ div > div[style*="display: flex"] {
   margin-left: 9px;
 }
 
-/* DESKTOP IMAGE GRID */
-
-.puzzle-checkbox-grid {
-  display: none;
-}
-
-/* MOBILE / SMALL TABLETS */
-@media (max-width: 900px) {
-
-  .puzzle-image-grid {
-    display: none;
-  }
-
-  .puzzle-checkbox-grid {
-    display: block;
-  }
-
-}
-
 .puzzle-image-grid {
-
-  display: grid;
+  display: none;
 
   grid-template-columns:
     180px
@@ -118,6 +98,22 @@ div > div[style*="display: flex"] {
   align-items: center;
 
   justify-content: start;
+}
+
+.puzzle-checkbox-grid {
+  display: block;
+}
+
+@media screen and (min-width: 901px) and (hover: hover) and (pointer: fine) {
+
+  .puzzle-image-grid {
+    display: grid;
+  }
+
+  .puzzle-checkbox-grid {
+    display: none;
+  }
+
 }
 
 .puzzle-image-grid img {
@@ -146,6 +142,36 @@ div > div[style*="display: flex"] {
 
 .inactive-puzzle {
   cursor: default;
+}
+
+.puzzle-image-grid label {
+  position: relative;
+  display: inline-block;
+}
+
+.puzzle-image-grid input:checked + label img {
+  opacity: 0.45;
+}
+
+.puzzle-image-grid input:checked + label::after {
+
+  content: "✔";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 42px;
+  font-weight: bold;
+
+  color: limegreen;
+
+  text-shadow:
+    0 0 4px white,
+    0 0 8px white;
 }
 
 </style>
@@ -196,28 +222,28 @@ div > div[style*="display: flex"] {
   <div>
     <input type="checkbox" id="bogle_easy" name="bogle_easy" hidden disabled>
     <label for="bogle_easy" class="inactive-puzzle">
-      <img src="thumbnails/bogle1.png" alt="Easy Bogle unavailable" title="Easy Bogle unavailable">
+      <img src="thumbnails/bogle1.png" alt="Easy Bōgle unavailable" title="Easy Bōgle unavailable">
     </label>
   </div>
 
   <div>
     <input type="checkbox" id="bogle_medium" hidden>
     <label for="bogle_medium">
-      <img src="thumbnails/bogle2.png" alt="Medium Bogle" title="Medium Bogle">
+      <img src="thumbnails/bogle2.png" alt="Medium Bōgle" title="Medium Bōgle">
     </label>
   </div>
 
   <div>
     <input type="checkbox" id="bogle_hard" name="bogle_hard" hidden disabled>
-    <label for="bogle_easy" class="inactive-puzzle">
-      <img src="thumbnails/bogle3.png" alt="Hard Bogle unavailable" title="Hard Bogle unavailable">
+    <label for="bogle_hard" class="inactive-puzzle">
+      <img src="thumbnails/bogle3.png" alt="Hard Bōgle unavailable" title="Hard Bōgle unavailable">
     </label>
   </div>
 
   <div>
     <input type="checkbox" id="bogle_expert" name="bogle_expert" hidden disabled>
-    <label for="bogle_easy" class="inactive-puzzle">
-      <img src="thumbnails/bogle4.png" alt="Expert Bogle unavailable" title="Expert Bogle unavailable">
+    <label for="bogle_expert" class="inactive-puzzle">
+      <img src="thumbnails/bogle4.png" alt="Expert Bōgle unavailable" title="Expert Bōgle unavailable">
     </label>
   </div>
 
