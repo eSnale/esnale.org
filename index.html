@@ -1803,55 +1803,6 @@ emailValid &&
 </div>
 
 <br>
-<script>
-document.addEventListener("click", function(e) {
 
-  const clicked = e.target.closest("button, input[type='button'], input[type='submit'], a, div, span");
-
-  if (!clicked) return;
-
-  const text = (clicked.innerText || clicked.value || "").trim();
-
-  if (text !== "Submit") return;
-
-  const order = [];
-
-  document.querySelectorAll("input, select, textarea").forEach(function(el) {
-
-    if (el.type === "hidden") return;
-
-    if ((el.type === "checkbox" || el.type === "radio") && !el.checked) return;
-
-    const key =
-      el.id ||
-      el.name ||
-      el.placeholder ||
-      "Submitted Item";
-
-    const value =
-      el.type === "checkbox"
-        ? "Yes"
-        : el.value;
-
-    if (value && value.trim() !== "") {
-
-      order.push({
-        key: key,
-        value: value
-      });
-
-    }
-
-  });
-
-  sessionStorage.setItem(
-    "esnaleOrder",
-    JSON.stringify(order)
-  );
-
-  window.location.href = "confirmation.html";
-
-});
-</script>
 </body>
 </html>
