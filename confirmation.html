@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Order Confirmation - eSnale</title>
+
+  <style>
+
+    body {
+
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .container {
+
+      max-width: 900px;
+
+      margin: 40px auto;
+
+      background: white;
+
+      padding: 30px;
+
+      border-radius: 10px;
+
+      box-shadow:
+        0 0 10px rgba(0,0,0,0.1);
+
+    }
+
+    h1 {
+
+      text-align: center;
+
+      margin-bottom: 30px;
+
+    }
+
+    .item {
+
+      margin-bottom: 15px;
+
+      padding-bottom: 15px;
+
+      border-bottom:
+        1px solid #ddd;
+
+    }
+
+    .label {
+
+      font-weight: bold;
+
+    }
+
+    .value {
+
+      margin-top: 5px;
+
+      word-wrap: break-word;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Your order is as follows:</h1>
+
+    <div id="orderDisplay"></div>
+
+  </div>
+
+  <script>
+
+    const order = JSON.parse(
+      sessionStorage.getItem("esnaleOrder") || "[]"
+    );
+
+    const box =
+      document.getElementById("orderDisplay");
+
+    if (order.length === 0) {
+
+      box.innerHTML =
+        "<p>No order information was received.</p>";
+
+    }
+
+    else {
+
+      order.forEach(function(item) {
+
+        const div =
+          document.createElement("div");
+
+        div.className = "item";
+
+        div.innerHTML =
+          "<div class='label'>" +
+          item.key +
+          "</div>" +
+          "<div class='value'>" +
+          item.value +
+          "</div>";
+
+        box.appendChild(div);
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
