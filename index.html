@@ -209,7 +209,7 @@ div > div[style*="display: flex"] {
 }
 
 .puzzle-image-grid label.inactive-puzzle img {
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .puzzle-header {
@@ -275,7 +275,7 @@ div > div[style*="display: flex"] {
 <font size=6>Step 1: Choose Puzzles</font>
 <p style="text-align:justify; margin-top: 0px;">Any number of puzzle types you choose will be distributed as evenly as possible among the 36-sheet puzzle pack.&nbsp;&nbsp;Please note that some puzzles are not available in every difficulty.&nbsp;&nbsp;Click on any of the puzzle names for a printable free sample!</p>
 
-<form action="08a.html" method="GET">
+<form action="confirmation.html" method="GET">
 
 <div class="puzzle-image-grid">
 
@@ -488,14 +488,14 @@ div > div[style*="display: flex"] {
 
 <div style="grid-column: 7; grid-row: 4;">
   <input type="checkbox" id="outsidesamurai_hard" name="outsidesamurai_hard" hidden disabled>
-  <label for="outsidesamurai_hard">
+  <label for="outsidesamurai_hard" class="inactive-puzzle">
     <img src="thumbnails/outsidesamurai3.png" alt="Hard Outside Samurai unavailable" title="Hard Outside Samurai unavailable">
   </label>
 </div>
 
 <div style="grid-column: 7; grid-row: 5;">
   <input type="checkbox" id="outsidesamurai_expert" name="outsidesamurai_expert" hidden disabled>
-  <label for="outsidesamurai_expert">
+  <label for="outsidesamurai_expert" class="inactive-puzzle">
     <img src="thumbnails/outsidesamurai4.png" alt="Expert Outside Samurai unavailable" title="Expert Outside Samurai unavailable">
   </label>
 </div>
@@ -524,14 +524,14 @@ div > div[style*="display: flex"] {
 
 <div style="grid-column: 8; grid-row: 4;">
   <input type="checkbox" id="outsidesudoku_hard" name="outsidesudoku_hard" hidden disabled>
-  <label for="outsidesudoku_hard">
+  <label for="outsidesudoku_hard" class="inactive-puzzle">
     <img src="thumbnails/outsidesudoku3.png" alt="Hard Outside Sudoku unavailable" title="Hard Outside Sudoku unavailable">
   </label>
 </div>
 
 <div style="grid-column: 8; grid-row: 5;">
   <input type="checkbox" id="outsidesudoku_expert" name="outsidesudoku_expert" hidden disabled>
-  <label for="outsidesudoku_expert">
+  <label for="outsidesudoku_expert" class="inactive-puzzle">
     <img src="thumbnails/outsidesudoku4.png" alt="Expert Outside Sudoku unavailable" title="Expert Outside Sudoku unavailable">
   </label>
 </div>
@@ -660,26 +660,15 @@ div > div[style*="display: flex"] {
     <div><b>Expert</b></div>
   </div>
 
-  <!-- Row: Bōgle -->
-  <div style="display: grid; grid-template-columns: auto repeat(4, 64px); align-items: center; justify-items: center;">
-    <div style="justify-self: end; text-align: right;">
-      <a href="samples/bogle.pdf" target="_blank">Bōgle</a>
-    </div>
-    <input type="checkbox" name="bogle_easy" disabled>
-    <input type="checkbox" name="bogle_medium" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="bogle_hard" disabled>
-    <input type="checkbox" name="bogle_expert" disabled>
-  </div>
-
   <!-- Row: Chess Problems -->
   <div style="display: grid; grid-template-columns: auto repeat(4, 64px); align-items: center; justify-items: center;">
     <div style="justify-self: end; text-align: right;">
       <a href="samples/chessproblems.pdf" target="_blank">Chess Problems</a>
     </div>
-    <input type="checkbox" name="chess_easy" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="chess_medium" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="chess_hard" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="chess_expert" disabled>
+    <input type="checkbox" name="chessproblems_easy" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="chessproblems_medium" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="chessproblems_hard" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="chessproblems_expert" disabled>
   </div>
 
   <!-- Row: CryptoQuotes -->
@@ -687,10 +676,10 @@ div > div[style*="display: flex"] {
     <div style="justify-self: end; text-align: right;">
       <a href="samples/cryptoquotes.pdf" target="_blank">CryptoQuotes</a>
     </div>
-    <input type="checkbox" name="cryptoQuotes_easy" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="cryptoQuotes_medium" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="cryptoQuotes_hard" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="cryptoQuotes_expert" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="cryptoquotes_easy" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="cryptoquotes_medium" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="cryptoquotes_hard" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="cryptoquotes_expert" onchange="checkPuzzleSelection()">
   </div>
 
   <!-- Row: Diagonal Samurai -->
@@ -698,10 +687,10 @@ div > div[style*="display: flex"] {
     <div style="justify-self: end; text-align: right;">
       <a href="samples/diagonalsamurai.pdf" target="_blank">Diagonal Samurai</a>
     </div>
-    <input type="checkbox" name="diagonal Samurai_easy" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="diagonal Samurai_medium" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="diagonal Samurai_hard" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="diagonal Samurai_expert" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="diagonalsamurai_easy" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="diagonalsamurai_medium" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="diagonalsamurai_hard" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="diagonalsamurai_expert" onchange="checkPuzzleSelection()">
   </div>
 
   <!-- Row: Diagonal Sudoku -->
@@ -709,10 +698,10 @@ div > div[style*="display: flex"] {
     <div style="justify-self: end; text-align: right;">
       <a href="samples/diagonalsudoku.pdf" target="_blank">Diagonal Sudoku</a>
     </div>
-    <input type="checkbox" name="diagonal Sudoku_easy" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="diagonal Sudoku_medium" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="diagonal Sudoku_hard" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="diagonal Sudoku_expert" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="diagonalsudoku_easy" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="diagonalsudoku_medium" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="diagonalsudoku_hard" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="diagonalsudoku_expert" onchange="checkPuzzleSelection()">
   </div>
 
   <!-- Row: Minesweeper -->
@@ -731,10 +720,10 @@ div > div[style*="display: flex"] {
     <div style="justify-self: end; text-align: right;">
       <a href="samples/outsidesamurai.pdf" target="_blank">Outside Samurai</a>
     </div>
-    <input type="checkbox" name="outside Samurai_easy" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="outside Samurai_medium" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="outside Samurai_hard" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="outside Samurai_expert" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="outsidesamurai_easy" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="outsidesamurai_medium" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="outsidesamurai_hard" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="outsidesamurai_expert" onchange="checkPuzzleSelection()">
   </div>
 
   <!-- Row: Outside Sudoku -->
@@ -742,10 +731,10 @@ div > div[style*="display: flex"] {
     <div style="justify-self: end; text-align: right;">
       <a href="samples/outsidesudoku.pdf" target="_blank">Outside Sudoku</a>
     </div>
-    <input type="checkbox" name="outside Sudoku_easy" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="outside Sudoku_medium" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="outside Sudoku_hard" onchange="checkPuzzleSelection()">
-    <input type="checkbox" name="outside Sudoku_expert" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="outsidesudoku_easy" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="outsidesudoku_medium" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="outsidesudoku_hard" onchange="checkPuzzleSelection()">
+    <input type="checkbox" name="outsidesudoku_expert" onchange="checkPuzzleSelection()">
   </div>
 
   <!-- Row: Picross -->

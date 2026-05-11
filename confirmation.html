@@ -2,130 +2,342 @@
 <html lang="en">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eSnale Order Information</title>
 
-  <meta charset="UTF-8">
+<style>
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+body {
+background:
+linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.75)),
+url('tile.jfif');
+background-repeat: repeat;
+background-size: 300px 300px;
+background-color: #f2f2f2;
+font-family: Arial, sans-serif;
+margin-left: 10px;
+margin-right: 10px;
+}
 
-  <title>Order Confirmation - eSnale</title>
+.section-title {
+font-size: 2em;
+margin-top: 25px;
+margin-bottom: 10px;
+}
 
-  <style>
+.info-line {
+margin-bottom: 6px;
+word-wrap: break-word;
+}
 
-    body {
+.puzzle-list {
+columns: 2;
+-webkit-columns: 2;
+-moz-columns: 2;
+}
 
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+@media screen and (max-width: 700px) {
+.puzzle-list {
+columns: 1;
+-webkit-columns: 1;
+-moz-columns: 1;
+}
+}
 
-      margin: 0;
-      padding: 0;
+hr {
+margin-top: 20px;
+margin-bottom: 20px;
+}
 
-    }
-
-    .container {
-
-      max-width: 900px;
-
-      margin: 40px auto;
-
-      background: white;
-
-      padding: 30px;
-
-      border-radius: 10px;
-
-      box-shadow:
-        0 0 10px rgba(0,0,0,0.1);
-
-    }
-
-    h1 {
-
-      text-align: center;
-
-      margin-bottom: 30px;
-
-    }
-
-    .item {
-
-      margin-bottom: 15px;
-
-      padding-bottom: 15px;
-
-      border-bottom:
-        1px solid #ddd;
-
-    }
-
-    .label {
-
-      font-weight: bold;
-
-    }
-
-    .value {
-
-      margin-top: 5px;
-
-      word-wrap: break-word;
-
-    }
-
-  </style>
-
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<font size="6">Submitted Order Information</font>
 
-    <h1>Your order is as follows:</h1>
+<hr size="3" color="black">
 
-    <div id="orderDisplay"></div>
+<div class="section-title">Step 1: Puzzle Selections</div>
 
-  </div>
+<div id="puzzle-list" class="puzzle-list"></div>
 
-  <script>
+<br>
 
-    const order = JSON.parse(
-      sessionStorage.getItem("esnaleOrder") || "[]"
-    );
+<div class="info-line">
+<b>No Instructions:</b>
+<span id="no_instructions_status"></span>
+</div>
 
-    const box =
-      document.getElementById("orderDisplay");
+<hr size="3" color="black">
 
-    if (order.length === 0) {
+<div class="section-title">Step 2: Billing Info</div>
 
-      box.innerHTML =
-        "<p>No order information was received.</p>";
+<div class="info-line">
+<b>Cardholder:</b>
+<span id="billing_name"></span>
+</div>
 
-    }
+<div class="info-line">
+<b>Email Address:</b>
+<span id="billing_email"></span>
+</div>
 
-    else {
+<div class="info-line">
+<b>Pay By Mail:</b>
+<span id="pay_by_mail_status"></span>
+</div>
 
-      order.forEach(function(item) {
+<div id="card_section">
 
-        const div =
-          document.createElement("div");
+<div class="info-line">
+<b>Debit/Credit Card:</b>
+<span id="card"></span>
+</div>
 
-        div.className = "item";
+<div class="info-line">
+<b>Expiration:</b>
+<span id="exp"></span>
+</div>
 
-        div.innerHTML =
-          "<div class='label'>" +
-          item.key +
-          "</div>" +
-          "<div class='value'>" +
-          item.value +
-          "</div>";
+<div class="info-line">
+<b>CVV:</b>
+<span id="cvv"></span>
+</div>
 
-        box.appendChild(div);
+<div class="info-line">
+<b>Address Line 1:</b>
+<span id="billing_address1"></span>
+</div>
 
-      });
+<div class="info-line" id="billing_address2_line">
+<b>Line 2:</b>
+<span id="billing_address2"></span>
+</div>
 
-    }
+<div class="info-line">
+<b>City:</b>
+<span id="billing_city"></span>
+</div>
 
-  </script>
+<div class="info-line">
+<b>State:</b>
+<span id="billing_state"></span>
+</div>
+
+<div class="info-line">
+<b>ZIP Code:</b>
+<span id="billing_zip"></span>
+</div>
+
+</div>
+
+<hr size="3" color="black">
+
+<div class="section-title">Step 3: Shipping Info</div>
+
+<div class="info-line">
+<b>Same As Billing:</b>
+<span id="same_as_billing_status"></span>
+</div>
+
+<div id="shipping_section">
+
+<div class="info-line">
+<b>Inmate Name:</b>
+<span id="shipping_name"></span>
+</div>
+
+<div class="info-line">
+<b>DOC Number:</b>
+<span id="inmateid"></span>
+</div>
+
+<div class="info-line">
+<b>Address Line 1:</b>
+<span id="shipping_address1"></span>
+</div>
+
+<div class="info-line" id="shipping_address2_line">
+<b>Line 2:</b>
+<span id="shipping_address2"></span>
+</div>
+
+<div class="info-line">
+<b>City:</b>
+<span id="shipping_city"></span>
+</div>
+
+<div class="info-line">
+<b>State:</b>
+<span id="shipping_state"></span>
+</div>
+
+<div class="info-line">
+<b>ZIP Code:</b>
+<span id="shipping_zip"></span>
+</div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+function get(id) {
+  return params.get(id) || "";
+}
+
+function set(id, value) {
+  document.getElementById(id).textContent = value;
+}
+
+/* =========================
+   STEP 1
+========================= */
+
+const puzzleContainer = document.getElementById("puzzle-list");
+
+const puzzleNames = {
+
+  bogle: "Bōgle",
+  chessproblems: "Chess Problems",
+  cryptoquotes: "CryptoQuotes",
+  diagonalsamurai: "Diagonal Samurai",
+  diagonalsudoku: "Diagonal Sudoku",
+  minesweeper: "Minesweeper",
+  outsidesamurai: "Outside Samurai",
+  outsidesudoku: "Outside Sudoku",
+  picross: "Picross",
+  samurai: "Samurai",
+  sudoku: "Sudoku"
+
+};
+
+const difficultyNames = {
+
+  easy: "Easy",
+  medium: "Medium",
+  hard: "Hard",
+  expert: "Expert"
+
+};
+
+for (const [key, value] of params.entries()) {
+
+  if (value === "") continue;
+
+  const match = key.match(/^(.+?)_(easy|medium|hard|expert)$/i);
+
+  if (!match) continue;
+
+  const puzzleKey = match[1]
+    .replace(/\s/g, "")
+    .toLowerCase();
+
+  const difficultyKey = match[2].toLowerCase();
+
+  const puzzleName =
+    puzzleNames[puzzleKey] || match[1];
+
+  const difficultyName =
+    difficultyNames[difficultyKey] || difficultyKey;
+
+  const div = document.createElement("div");
+
+  div.className = "info-line";
+
+  div.textContent =
+    "✔ " + puzzleName + " (" + difficultyName + ")";
+
+  puzzleContainer.appendChild(div);
+}
+
+set(
+  "no_instructions_status",
+  params.has("no_instructions") ? "Yes" : "No"
+);
+
+/* =========================
+   STEP 2
+========================= */
+
+set("billing_name", get("billing_name"));
+
+set("billing_email", get("billing_email"));
+
+const payByMail = params.has("check_mo");
+
+set(
+  "pay_by_mail_status",
+  payByMail ? "Yes" : "No"
+);
+
+if (payByMail) {
+
+  document.getElementById("card_section").style.display = "none";
+
+} else {
+
+  set("card", get("card"));
+  set("exp", get("exp"));
+  set("cvv", get("cvv"));
+
+  set("billing_address1", get("billing_address1"));
+
+  set("billing_address2", get("billing_address2"));
+
+  set("billing_city", get("billing_city"));
+
+  set("billing_state", get("billing_state"));
+
+  set("billing_zip", get("billing_zip"));
+
+  if (get("billing_address2") === "") {
+    document.getElementById("billing_address2_line").style.display = "none";
+  }
+
+}
+
+/* =========================
+   STEP 3
+========================= */
+
+const sameAsBilling = params.has("same_as_billing");
+
+set(
+  "same_as_billing_status",
+  sameAsBilling ? "Yes" : "No"
+);
+
+if (sameAsBilling) {
+
+  document.getElementById("shipping_section").style.display = "none";
+
+} else {
+
+  set("shipping_name", get("shipping_name"));
+
+  set("inmateid", get("inmateid"));
+
+  set("shipping_address1", get("shipping_address1"));
+
+  set("shipping_address2", get("shipping_address2"));
+
+  set("shipping_city", get("shipping_city"));
+
+  set("shipping_state", get("shipping_state"));
+
+  set("shipping_zip", get("shipping_zip"));
+
+  if (get("shipping_address2") === "") {
+    document.getElementById("shipping_address2_line").style.display = "none";
+  }
+
+}
+
+</script>
 
 </body>
 </html>
